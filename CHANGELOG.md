@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.1 PreRelease] - 2021-10-30
+
+Compile fresh CSS using --advanced + aa-gdpr local resources as per AA 2.9.3.
+
+## [0.3.0 PreRelease] - 2021-10-30
+
+## Changed
+
+Adds many updated package versions in line with AA 2.9.3
+
 ## [0.2.5 PreRelease] - 2021-03-26
 
 ### Changed
