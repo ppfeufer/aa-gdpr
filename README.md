@@ -15,6 +15,7 @@ Local staticfile delivery of  resources to avoid using CDNs
   * Moment.js 2.27, 2.29.1 <https://github.com/moment/moment>
   * jQuery 2.2.4, 3.6.0 <https://github.com/jquery/jquery>
   * jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
+  * jQuery-UI 1.12.1 <https://jqueryui.com/>
   * Twitter-Bootstrap 3.4.1, 4.4.1, 4.5.2, 4.6.1, 5.0.1 <https://github.com/twbs/bootstrap>
   * x-editable 1.5.1 <http://vitalets.github.io/x-editable>
   * Less 2.7.3 & 3.12.2 <http://lesscss.org/>
@@ -27,6 +28,7 @@ Local staticfile delivery of  resources to avoid using CDNs
   * DataTables 1.10.21 <http://datatables.net/>
   * FontAwesome 5.11.2, 5.14.0, 5.15.4 <https://github.com/FortAwesome/Font-Awesome>
   * jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
+  * jQuery-UI 1.12.1 <https://jqueryui.com/>
   * x-editable 1.5.1 <http://vitalets.github.io/x-editable>
 
 ## Planned Features
