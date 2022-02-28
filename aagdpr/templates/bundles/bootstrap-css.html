@@ -2,14 +2,14 @@
 <!-- Start Bootstrap CSS aa-gdpr -->
 {% if NIGHT_MODE %}
     <!-- Start Bootstrap - darkly from aa-gdpr -->
-    <link rel="stylesheet" type="text/css" href="{% static 'aagdpr/css/themes/darkly/darkly.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'aagdpr/css/themes/darkly/darkly.min.css' %}">
     {% if debug %}
         <!-- Debug Detected, Normally Less would be used but AA-GDPR has disabled this for CDN reasons -->
     {% endif %}
     <!-- End Bootstrap - darkly aa-gdpr -->
 {% else %}
     <!-- Start Bootstrap - flatly aa-gdpr -->
-    <link rel="stylesheet" type="text/css" href="{% static 'aagdpr/css/themes/flatly/flatly.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'aagdpr/css/themes/flatly/flatly.min.css' %}">
     {% if debug %}
         <!-- Debug Detected, Normally Less would be used but AA-GDPR has disabled this for CDN reasons -->
     {% endif %}
