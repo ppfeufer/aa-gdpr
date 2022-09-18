@@ -296,9 +296,10 @@ DEBUG = False
 
 # Add any additional apps to this list.
 INSTALLED_APPS += [
-    "aa-gdpr",
+    "",
 ]
 
+INSTALLED_APPS.insert(0, 'aagdpr')
 # Enter credentials to use MySQL/MariaDB. Comment out to use sqlite3
 """
 DATABASES['default'] = {
