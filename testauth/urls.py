@@ -1,10 +1,10 @@
 # Django
-from django.urls import include, path
+from django.urls import include, re_path
 
 # Alliance Auth
 from allianceauth import urls
 
 urlpatterns = [
     # Alliance Auth URLs
-    path(r"", include(urls)),
+    re_path(r"", include(urls)),
 ]
