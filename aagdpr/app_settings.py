@@ -1,4 +1,5 @@
 from django.conf import settings
+
 from .utils import clean_setting
 
 # Attempt to load JS/CSS/Fonts from staticfiles when possible

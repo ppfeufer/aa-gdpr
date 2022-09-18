@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## [0.3.3 PreRelease] - 2021-12-28 
+## [0.3.3 PreRelease] - 2021-12-28
 
 - Added missing jQuery-UI images. @ppfeufer
 ## [0.3.2 PreRelease] - 2021-10-30
