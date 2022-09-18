@@ -296,7 +296,7 @@ DEBUG = False
 
 # Add any additional apps to this list.
 INSTALLED_APPS += [
-    "alumni",
+    "aa-gdpr",
 ]
 
 # Enter credentials to use MySQL/MariaDB. Comment out to use sqlite3
@@ -339,3 +339,8 @@ DEFAULT_FROM_EMAIL = ""
 #######################################
 # Add any custom settings below here. #
 #######################################
+
+## Settings for AA-GDPR ##
+
+# Instruct third party apps to avoid CDNs
+AVOID_CDN = False
