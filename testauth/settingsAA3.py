@@ -296,7 +296,6 @@ DEBUG = False
 
 # Add any additional apps to this list.
 INSTALLED_APPS += [
-    "",
 ]
 
 INSTALLED_APPS.insert(0, 'aagdpr')
