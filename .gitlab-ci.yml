@@ -17,7 +17,7 @@ before_script:
 
 pre-commit-check:
   stage: pre-commit
-  image: python:3.10-bullseye
+  image: python:3.11-bullseye
   variables:
     PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
   cache:
@@ -43,10 +43,12 @@ secret_detection:
   stage: gitlab
   before_script: []
 
-.test-py38:
+test-py38:
   needs: []
   stage: test
   image: python:3.8-bullseye
+  script:
+    - tox -e py38
   artifacts:
     when: always
     reports:
@@ -54,10 +56,12 @@ secret_detection:
         coverage_format: cobertura
         path: coverage.xml
 
-.test-py39:
+test-py39:
   needs: []
   stage: test
   image: python:3.9-bullseye
+  script:
+    - tox -e py39
   artifacts:
     when: always
     reports:
@@ -66,10 +70,12 @@ secret_detection:
         path: coverage.xml
 
 
-.test-py310:
+test-py310:
   needs: []
   stage: test
   image: python:3.10-bullseye
+  script:
+    - tox -e py310
   artifacts:
     when: always
     reports:
@@ -77,42 +83,35 @@ secret_detection:
         coverage_format: cobertura
         path: coverage.xml
 
-
-.test-py311:
+test-py311:
   needs: []
   stage: test
-  image: python:3.11-rc-bullseye
+  image: python:3.11-bullseye
+  script:
+    - tox -e py311
   artifacts:
     when: always
     reports:
       coverage_report:
         coverage_format: cobertura
         path: coverage.xml
-  allow_failure: true
 
-test-38-django40:
-  extends: .test-py38
+test-pypy:
+  needs: []
+  stage: test
+  image: pypy:3.9-bullseye
   script:
-    - tox -e py38-django40
-
-test-39-django40:
-  extends: .test-py39
-  script:
-    - tox -e py39-django40
-
-test-310-django40:
-  extends: .test-py310
-  script:
-    - tox -e py310-django40
-
-test-311-django40:
-  extends: .test-py311
-  script:
-    - tox -e py311-django40
+    - tox -e pypy
+  artifacts:
+    when: always
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
 
 deploy_production:
   stage: deploy
-  image: python:3.10-bullseye
+  image: python:3.11-bullseye
 
   before_script:
     - python -m pip install --upgrade pip
