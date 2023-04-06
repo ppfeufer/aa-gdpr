@@ -4,8 +4,34 @@
 #   pre-commit autoupdate
 
 repos:
+  # Code Upgrades
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.1
+    hooks:
+      - id: pyupgrade
+        args: [--py38-plus]
+
+  - repo: https://github.com/adamchainz/django-upgrade
+    rev: 1.12.0
+    hooks:
+      - id: django-upgrade
+        args: [--target-version=4.0]
+  # Code Logic
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: isort (python)
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+      - id: python-check-mock-methods
+      - id: python-no-log-warn
+      - id: python-use-type-annotations
+      - id: text-unicode-replacement-char
+  # Formatting
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v4.4.0
     hooks:
       - id: check-case-conflict
       - id: check-json
@@ -15,76 +41,54 @@ repos:
       - id: trailing-whitespace
         exclude: |
           (?x)(
-            \.css|
-            \.scss|
-            \.css\.map|
             \.min\.css|
-            \.rtl\.css|
-            \.js|
             \.min\.js|
-            \.js\.map|
-            \.min\.map|
             \.po|
             \.mo|
-            swagger\.json|
-            \.svg|
+            swagger\.json
           )
       - id: end-of-file-fixer
         exclude: |
           (?x)(
-            \.css|
-            \.scss|
-            \.css\.map|
             \.min\.css|
-            \.rtl\.css|
-            \.js|
             \.min\.js|
-            \.js\.map|
-            \.min\.map|
             \.po|
             \.mo|
-            swagger\.json|
-            \.svg|
+            swagger\.json
           )
       - id: mixed-line-ending
-        args: [ '--fix=lf' ]
+        args: ["--fix=lf"]
       - id: fix-encoding-pragma
-        args: [ '--remove' ]
-
+        args: ["--remove"]
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 2.6.1
+    rev: 2.7.1
     hooks:
       - id: editorconfig-checker
         exclude: |
           (?x)(
-            \.css|
-            \.scss|
-            \.css\.map|
-            \.min\.css|
-            \.rtl\.css|
-            \.js|
-            \.min\.js|
-            \.js\.map|
-            \.min\.map|
+            LICENSE|
+            allianceauth\/static\/allianceauth\/css\/themes\/bootstrap-locals.less|
             \.po|
             \.mo|
-            swagger\.json|
-            \.svg|
+            swagger\.json
           )
-
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v3.1.0
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
     hooks:
-      - id: pyupgrade
-        args: [ --py38-plus ]
+      - id: flake8
+        args:
+          [
+            "--max-line-length=119",
+            "--ignore=E203, E231, E501, W503, W291, W293",
+            "--select=C,E,F,W,B,B950",
+          ]
 
-  - repo: https://github.com/pycqa/isort
-    rev: 5.10.1
+  - repo: https://github.com/asottile/yesqa
+    rev: v1.4.0
     hooks:
-      - id: isort
-        name: isort (python)
-
+      - id: yesqa
+  #Repo
   - repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v2.1.0
+    rev: v2.2.0
     hooks:
       - id: setup-cfg-fmt
