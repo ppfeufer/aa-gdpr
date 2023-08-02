@@ -17,7 +17,7 @@ before_script:
 
 pre-commit-check:
   stage: pre-commit
-  image: python:3.11-bullseye
+  image: python:3.11-bookworm
   variables:
     PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
   cache:
@@ -46,7 +46,7 @@ secret_detection:
 test-py38:
   needs: []
   stage: test
-  image: python:3.8-bullseye
+  image: python:3.8-bookworm
   script:
     - tox -e py38
   artifacts:
@@ -59,7 +59,7 @@ test-py38:
 test-py39:
   needs: []
   stage: test
-  image: python:3.9-bullseye
+  image: python:3.9-bookworm
   script:
     - tox -e py39
   artifacts:
@@ -73,7 +73,7 @@ test-py39:
 test-py310:
   needs: []
   stage: test
-  image: python:3.10-bullseye
+  image: python:3.10-bookworm
   script:
     - tox -e py310
   artifacts:
@@ -86,7 +86,7 @@ test-py310:
 test-py311:
   needs: []
   stage: test
-  image: python:3.11-bullseye
+  image: python:3.11-bookworm
   script:
     - tox -e py311
   artifacts:
@@ -96,22 +96,9 @@ test-py311:
         coverage_format: cobertura
         path: coverage.xml
 
-test-pypy:
-  needs: []
-  stage: test
-  image: pypy:3.9-bullseye
-  script:
-    - tox -e pypy
-  artifacts:
-    when: always
-    reports:
-      coverage_report:
-        coverage_format: cobertura
-        path: coverage.xml
-
 deploy_production:
   stage: deploy
-  image: python:3.11-bullseye
+  image: python:3.11-bookworm
 
   before_script:
     - python -m pip install --upgrade pip
