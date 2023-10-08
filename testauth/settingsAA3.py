@@ -12,8 +12,11 @@ from celery.schedules import crontab
 
 from django.contrib import messages
 
+CELERY_ALWAYS_EAGER = True  # Forces celery to run locally for testing
+
 INSTALLED_APPS = [
-    'allianceauth',  # needs to be on top of this list to support favicons in Django admin (see https://gitlab.com/allianceauth/allianceauth/-/issues/1301)
+    # needs to be on top of this list to support favicons in Django admin (see https://gitlab.com/allianceauth/allianceauth/-/issues/1301)
+    'allianceauth',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,7 +81,10 @@ MIDDLEWARE = [
     'allianceauth.analytics.middleware.AnalyticsMiddleware',
 ]
 
-ROOT_URLCONF = 'allianceauth.urls'
+ROOT_URLCONF = "tests.urls"
+
+SITE_URL = "https://example.com"
+CSRF_TRUSTED_ORIGINS = [SITE_URL]
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
@@ -173,7 +179,8 @@ MESSAGE_TAGS = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1" # change the 1 here to change the database used
+        # change the 1 here to change the database used
+        "LOCATION": "redis://127.0.0.1:6379/1"
     }
 }
 
@@ -193,7 +200,8 @@ SITE_NAME = 'Alliance Auth'
 
 LOGIN_URL = 'auth_login_user'  # view that handles login logic
 
-LOGIN_REDIRECT_URL = 'authentication:dashboard'  # default destination when logging in if no redirect specified
+# default destination when logging in if no redirect specified
+LOGIN_REDIRECT_URL = 'authentication:dashboard'
 LOGOUT_REDIRECT_URL = 'authentication:dashboard'  # destination after logging out
 # Both of these redirects accept values as per the django redirect shortcut
 # https://docs.djangoproject.com/en/1.11/topics/http/shortcuts/#redirect
