@@ -5,13 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.4] - 2023-10-08
+
+Maintenance Release
 
 ## [0.3.3 PreRelease] - 2021-12-28
 
 - Added missing jQuery-UI images. @ppfeufer
+
 ## [0.3.2 PreRelease] - 2021-10-30
 
 - Added jQuery-UI 1.12.1
+
 ## [0.3.1 PreRelease] - 2021-10-30
 
 Compile fresh CSS using --advanced + aa-gdpr local resources as per AA 2.9.3.
@@ -27,9 +32,11 @@ Adds many updated package versions in line with AA 2.9.3
 ### Changed
 
 Adds/Updates to Clipboard.js 0.2.8
+
 ## [0.2.4 PreRelease] - 2020-09-11
 
 ### Fixed
+
 Add jquery-visibility for Alliance Auth v2.8.2 (@ppfeufer)
 
 ## [0.2.3 PreRelease] - 2020-09-11
