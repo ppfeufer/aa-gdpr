@@ -82,8 +82,12 @@ repos:
           (?x)(
             LICENSE|
             allianceauth\/static\/allianceauth\/css\/themes\/bootstrap-locals.less|
+            \.js|
+            \.css|
+            \.scss|
             \.po|
             \.mo|
+            \.less|
             swagger\.json
           )
   - repo: https://github.com/pycqa/flake8
