@@ -347,7 +347,7 @@ DEFAULT_FROM_EMAIL = ""
 # Add any custom settings below here. #
 #######################################
 
-## Settings for AA-GDPR ##
+# Settings for AA-GDPR #
 
 # Instruct third party apps to avoid CDNs
 AVOID_CDN = False
