@@ -43,12 +43,9 @@ secret_detection:
   stage: gitlab
   before_script: []
 
-test-py38:
-  needs: []
+.test-py38:
   stage: test
-  image: python:3.8-bookworm
-  script:
-    - tox -e py38
+  image: python:3.8-bullseye
   artifacts:
     when: always
     reports:
@@ -56,12 +53,9 @@ test-py38:
         coverage_format: cobertura
         path: coverage.xml
 
-test-py39:
-  needs: []
+.test-py39:
   stage: test
-  image: python:3.9-bookworm
-  script:
-    - tox -e py39
+  image: python:3.9-bullseye
   artifacts:
     when: always
     reports:
@@ -69,13 +63,9 @@ test-py39:
         coverage_format: cobertura
         path: coverage.xml
 
-
-test-py310:
-  needs: []
+.test-py310:
   stage: test
-  image: python:3.10-bookworm
-  script:
-    - tox -e py310
+  image: python:3.10-bullseye
   artifacts:
     when: always
     reports:
@@ -83,12 +73,9 @@ test-py310:
         coverage_format: cobertura
         path: coverage.xml
 
-test-py311:
-  needs: []
+.test-py311:
   stage: test
-  image: python:3.11-bookworm
-  script:
-    - tox -e py311
+  image: python:3.11-bullseye
   artifacts:
     when: always
     reports:
@@ -96,18 +83,60 @@ test-py311:
         coverage_format: cobertura
         path: coverage.xml
 
-test-py312:
-  needs: []
+.test-py312:
   stage: test
-  image: python:3.12-bookworm
-  script:
-    - tox -e py312
+  image: python:3.12-bullseye
   artifacts:
     when: always
     reports:
       coverage_report:
         coverage_format: cobertura
         path: coverage.xml
+
+test-py38-django40:
+  extends: .test-py38
+  script:
+  - tox -e py38-django40
+
+test-py38-django42:
+  extends: .test-py38
+  script:
+  - tox -e py38-django42
+
+test-py39-django40:
+  extends: .test-py39
+  script:
+  - tox -e py39-django40
+
+test-py39-django42:
+  extends: .test-py39
+  script:
+  - tox -e py39-django42
+
+test-py310-django40:
+  extends: .test-py310
+  script:
+  - tox -e py310-django40
+
+test-py310-django42:
+  extends: .test-py310
+  script:
+  - tox -e py310-django42
+
+test-py311-django40:
+  extends: .test-py311
+  script:
+  - tox -e py311-django40
+
+test-py311-django42:
+  extends: .test-py311
+  script:
+  - tox -e py311-django42
+
+test-py312-django42:
+  extends: .test-py312
+  script:
+  - tox -e py312-django42
 
 deploy_production:
   stage: deploy
