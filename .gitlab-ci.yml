@@ -45,7 +45,7 @@ secret_detection:
 
 .test-py38:
   stage: test
-  image: python:3.8-bullseye
+  image: python:3.8-bookworm
   artifacts:
     when: always
     reports:
@@ -55,7 +55,7 @@ secret_detection:
 
 .test-py39:
   stage: test
-  image: python:3.9-bullseye
+  image: python:3.9-bookworm
   artifacts:
     when: always
     reports:
@@ -65,7 +65,7 @@ secret_detection:
 
 .test-py310:
   stage: test
-  image: python:3.10-bullseye
+  image: python:3.10-bookworm
   artifacts:
     when: always
     reports:
@@ -75,7 +75,7 @@ secret_detection:
 
 .test-py311:
   stage: test
-  image: python:3.11-bullseye
+  image: python:3.11-bookworm
   artifacts:
     when: always
     reports:
@@ -85,7 +85,7 @@ secret_detection:
 
 .test-py312:
   stage: test
-  image: python:3.12-bullseye
+  image: python:3.12-bookworm
   artifacts:
     when: always
     reports:
