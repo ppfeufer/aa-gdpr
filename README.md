@@ -11,25 +11,32 @@ Overrides Alliance Auth default resource bundles to use staticfile delivery.
 Local staticfile delivery of resources to avoid using CDNs
 
 - Javascript
-  - Less 3.12.2, 4.1.2
-  - Moment.js 2.27, 2.29.1 <https://github.com/moment/moment>
-  - jQuery 2.2.4, 3.6.0 <https://github.com/jquery/jquery>
+  - Less.js 4.2.0
+  - Moment.js 2.29.4 <https://github.com/moment/moment>
+  - jQuery 2.2.4, 3.7.0 <https://github.com/jquery/jquery>
   - jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
-  - jQuery-UI 1.12.1 <https://jqueryui.com/>
-  - Twitter-Bootstrap 3.4.1, 4.4.1, 4.5.2, 4.6.1, 5.0.1 <https://github.com/twbs/bootstrap>
+  - jQuery-UI 1.13.2 <https://jqueryui.com/>
+  - Twitter-Bootstrap 3.4.1, 5.3.2 <https://github.com/twbs/bootstrap>
   - x-editable 1.5.1 <http://vitalets.github.io/x-editable>
   - Less 2.7.3 & 3.12.2 <http://lesscss.org/>
-  - DataTables 1.10.21 <http://datatables.net/>
-  - Clipboard.js 2.0.6, 2.0.8 <https://clipboardjs.com/>
+  - DataTables 1.13.7<http://datatables.net/>
+    - DataTables.net-bs5
+    - DataTables.bet-bs (Bootstrap 3)
+  - Clipboard.js 2.0.11 <https://clipboardjs.com/>
 - Fonts
-  - FontAwesome 5.11.2, 5.14.0, 5.15.4 <https://github.com/FortAwesome/Font-Awesome>
-  - OFL Lato 16 <https://fonts.google.com/specimen/Lato>
+  - FontAwesome 6.4.2 <https://github.com/FortAwesome/Font-Awesome>
+  - OFL Lato v16, v24 <https://fonts.google.com/specimen/Lato>
+  - OFL Roboto v30 <https://fonts.google.com/specimen/Roboto>
 - CSS
   - DataTables 1.10.21 <http://datatables.net/>
   - FontAwesome 5.11.2, 5.14.0, 5.15.4 <https://github.com/FortAwesome/Font-Awesome>
   - jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
   - jQuery-UI 1.12.1 <https://jqueryui.com/>
   - x-editable 1.5.1 <http://vitalets.github.io/x-editable>
+- AA v4.x Themes
+  - Darkly
+  - Flatly
+  - Materia
 
 ## Planned Features
 
@@ -44,13 +51,29 @@ Local staticfile delivery of resources to avoid using CDNs
 
 Install the app with your venv active
 
-```bash
+```shell
 pip install aa-gdpr
 ```
 
 ### Step Two - Configure
 
-- Add `INSTALLED_APPS.insert(0, 'aagdpr')` right before your `INSTALLED_APPS` list in your projects `local.py`
+- Add the following lines directly before your `INSTALLED_APPS` list in your projects `local.py`
+
+```python
+INSTALLED_APPS.insert(0, 'aagdpr')
+INSTALLED_APPS.remove('allianceauth.theme.darkly')
+INSTALLED_APPS.remove('allianceauth.theme.flatly')
+INSTALLED_APPS.remove('allianceauth.theme.materia')
+```
+
+- Add the following to `INSTALLED_APPS`
+
+```python
+'aagdpr.theme.darkly',
+'aagdpr.theme.flatly',
+'aagdpr.theme.materia',
+```
+
 - Add the below lines to your `local.py` settings file
 
 ```python
@@ -58,6 +81,8 @@ pip install aa-gdpr
 
 # Instruct third party apps to avoid CDNs
 AVOID_CDN = False
+DEFAULT_THEME = "aagdpr.theme.flatly.auth_hooks.FlatlyThemeHook"
+DEFAULT_THEME_DARK = "aagdpr.theme.darkly.auth_hooks.DarklyThemeHook"  # Legacy AAv3 user.profile.night_mode=1
 ```
 
 ### Step Three - Update Project
@@ -67,4 +92,4 @@ AVOID_CDN = False
 
 ## Settings
 
-AVOID_CDN - Will attempt to instruct third party applications to attempt to load CSS JS and Fonts from staticfiles, Default `False`.
+`AVOID_CDN` - Will attempt to instruct third party applications to attempt to load CSS JS and Fonts from staticfiles, Default `False`.
