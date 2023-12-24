@@ -80,7 +80,7 @@ INSTALLED_APPS.remove('allianceauth.theme.materia')
 ## Settings for AA-GDPR ##
 
 # Instruct third party apps to avoid CDNs
-AVOID_CDN = False
+AVOID_CDN = True
 DEFAULT_THEME = "aagdpr.theme.flatly.auth_hooks.FlatlyThemeHook"
 DEFAULT_THEME_DARK = "aagdpr.theme.darkly.auth_hooks.DarklyThemeHook"  # Legacy AAv3 user.profile.night_mode=1
 ```
@@ -92,4 +92,4 @@ DEFAULT_THEME_DARK = "aagdpr.theme.darkly.auth_hooks.DarklyThemeHook"  # Legacy 
 
 ## Settings
 
-`AVOID_CDN` - Will attempt to instruct third party applications to attempt to load CSS JS and Fonts from staticfiles, Default `False`.
+`AVOID_CDN` - Will attempt to instruct third party applications to attempt to load CSS JS and Fonts from staticfiles, Default `True`.
