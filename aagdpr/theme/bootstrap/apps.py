@@ -2,9 +2,9 @@ from django.apps import AppConfig
 
 
 class BootstrapThemeConfig(AppConfig):
-    name = "allianceauth.theme.bootstrap"
+    name = "aagdpr.theme.bootstrap"
     label = "bootstrap"
-    version = "5.3.0"
+    version = "5.3.3"
     verbose_name = f"Bootstrap v{version}"
 
     def ready(self):

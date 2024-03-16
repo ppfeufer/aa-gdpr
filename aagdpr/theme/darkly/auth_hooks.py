@@ -18,15 +18,15 @@ class DarklyThemeHook(ThemeHook):
             "Darkly",
             "Flatly in night mode! (AA-GDPR)",
             css=[{
-                "url": urljoin(settings.STATIC_URL, 'aagdpr/ajax/libs/bootswatch/5.3.2/darkly/bootstrap.min.css'),
-                "integrity": "sha512-kelkOOfwy2HmJS8uu9A8NcleX6OcotUc0xQQTXcM+FAx6dYynZCLIzHRkvzfZoWoSu0Z2GAxWu5AMtaWKJu76A=="
+                "url": urljoin(settings.STATIC_URL, 'aagdpr/ajax/libs/bootswatch/5.3.3/darkly/bootstrap.min.css'),
+                "integrity": "sha512-HDszXqSUU0om4Yj5dZOUNmtwXGWDa5ppESlX98yzbBS+z+3HQ8a/7kcdI1dv+jKq+1V5b01eYurE7+yFjw6Rdg=="
             }],
             js=[{
                 "url": urljoin(settings.STATIC_URL, 'aagdpr/ajax/libs/popper.js/2.11.8/umd/popper.min.js'),
                 "integrity": "sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ=="
             }, {
-                "url": urljoin(settings.STATIC_URL, 'aagdpr/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js'),
-                "integrity": "sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+                "url": urljoin(settings.STATIC_URL, 'aagdpr/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js'),
+                "integrity": "sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
             }],
             header_padding="4.5em"
         )
