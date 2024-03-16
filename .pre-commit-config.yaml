@@ -11,13 +11,13 @@ repos:
       - id: pyupgrade
         args: [--py38-plus]
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.15.0
+    rev: 1.16.0
     hooks:
       - id: django-upgrade
         args: [--target-version=4.0]
   # Code Logic
   - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
+    rev: 5.13.2
     hooks:
       - id: isort
         name: isort (python)
@@ -75,23 +75,19 @@ repos:
             swagger\.json
           )
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 2.7.2
+    rev: 2.7.3
     hooks:
       - id: editorconfig-checker
         exclude: |
           (?x)(
             LICENSE|
             allianceauth\/static\/allianceauth\/css\/themes\/bootstrap-locals.less|
-            \.js|
-            \.css|
-            \.scss|
             \.po|
             \.mo|
-            \.less|
             swagger\.json
           )
   - repo: https://github.com/pycqa/flake8
-    rev: 6.1.0
+    rev: 7.0.0
     hooks:
       - id: flake8
         additional_dependencies: [Flake8-pyproject]
