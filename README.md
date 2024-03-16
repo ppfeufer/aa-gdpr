@@ -16,7 +16,8 @@ Local staticfile delivery of resources to avoid using CDNs
   - jQuery 2.2.4, 3.7.0 <https://github.com/jquery/jquery>
   - jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
   - jQuery-UI 1.13.2 <https://jqueryui.com/>
-  - Twitter-Bootstrap 3.4.1, 5.3.2 <https://github.com/twbs/bootstrap>
+  - Twitter-Bootstrap 3.4.1, 5.3.3 <https://github.com/twbs/bootstrap>
+  - Bootswatch 5.3.3 Materia Flatly Darkly <http://bootswatch.com>
   - x-editable 1.5.1 <http://vitalets.github.io/x-editable>
   - Less 2.7.3 & 3.12.2 <http://lesscss.org/>
   - DataTables 1.13.7<http://datatables.net/>
@@ -24,11 +25,12 @@ Local staticfile delivery of resources to avoid using CDNs
     - DataTables.bet-bs (Bootstrap 3)
   - Clipboard.js 2.0.11 <https://clipboardjs.com/>
 - Fonts
-  - FontAwesome 6.4.2 <https://github.com/FortAwesome/Font-Awesome>
+  - FontAwesome 5.15.4, 6.4.2 <https://github.com/FortAwesome/Font-Awesome>
   - OFL Lato v16, v24 <https://fonts.google.com/specimen/Lato>
   - OFL Roboto v30 <https://fonts.google.com/specimen/Roboto>
 - CSS
-  - DataTables 1.10.21 <http://datatables.net/>
+  - DataTables.net 1.10.21, 1.13.7 <http://datatables.net/>
+  - datatables.net-bs5 1.13.7 <http://datatables.net/>
   - FontAwesome 5.11.2, 5.14.0, 5.15.4 <https://github.com/FortAwesome/Font-Awesome>
   - jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
   - jQuery-UI 1.12.1 <https://jqueryui.com/>
