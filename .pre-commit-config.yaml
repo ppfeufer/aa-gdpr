@@ -41,21 +41,21 @@ repos:
       # git checks
       - id: check-merge-conflict
       - id: check-added-large-files
-        args: [ --maxkb=1000 ]
+        args: [--maxkb=1000]
       - id: detect-private-key
       - id: check-case-conflict
       # Python checks
-#      - id: check-docstring-first
+      #      - id: check-docstring-first
       - id: debug-statements
-#      - id: requirements-txt-fixer
+      #      - id: requirements-txt-fixer
       - id: fix-encoding-pragma
-        args: [ --remove ]
+        args: [--remove]
       - id: fix-byte-order-marker
       # General quality checks
       - id: mixed-line-ending
-        args: [ --fix=lf ]
+        args: [--fix=lf]
       - id: trailing-whitespace
-        args: [ --markdown-linebreak-ext=md ]
+        args: [--markdown-linebreak-ext=md]
         exclude: |
           (?x)(
             \.min\.css|
@@ -84,7 +84,8 @@ repos:
             allianceauth\/static\/allianceauth\/css\/themes\/bootstrap-locals.less|
             \.po|
             \.mo|
-            swagger\.json
+            swagger\.json|
+            .css
           )
   - repo: https://github.com/pycqa/flake8
     rev: 7.0.0
