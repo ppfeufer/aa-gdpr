@@ -71,6 +71,7 @@ INSTALLED_APPS.remove('allianceauth.theme.materia')
 - Add the following to `INSTALLED_APPS`
 
 ```python
+'aagdpr.theme.bootstrap',
 'aagdpr.theme.darkly',
 'aagdpr.theme.flatly',
 'aagdpr.theme.materia',

@@ -5,18 +5,30 @@ from django.conf import settings
 from allianceauth import hooks
 from allianceauth.theme.hooks import ThemeHook
 
-CSS_STATICS = [{
-    "url": urljoin(settings.STATIC_URL, 'aagdpr/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css'),
-    "integrity": "sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
-}]
+CSS_STATICS = [
+    {
+        "url": urljoin(
+            settings.STATIC_URL,
+            "aagdpr/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css",
+        ),
+        "integrity": "sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==",
+    }
+]
 
-JS_STATICS = [{
-    "url": urljoin(settings.STATIC_URL, 'aagdpr/ajax/libs/popper.js/2.11.8/umd/popper.min.js'),
-    "integrity": "sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ=="
-}, {
-    "url": urljoin(settings.STATIC_URL, 'aagdpr/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js'),
-    "integrity": "sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
-}]
+JS_STATICS = [
+    {
+        "url": urljoin(
+            settings.STATIC_URL, "aagdpr/ajax/libs/popper.js/2.11.8/umd/popper.min.js"
+        ),
+        "integrity": "sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==",
+    },
+    {
+        "url": urljoin(
+            settings.STATIC_URL, "aagdpr/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+        ),
+        "integrity": "sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==",
+    },
+]
 
 
 class BootstrapThemeHook(ThemeHook):
@@ -32,7 +44,7 @@ class BootstrapThemeHook(ThemeHook):
             "Powerful, extensible, and feature-packed frontend toolkit.",
             css=CSS_STATICS,
             js=JS_STATICS,
-            header_padding="3.5em"
+            header_padding="3.5em",
         )
 
 
@@ -50,15 +62,15 @@ class BootstrapDarkThemeHook(ThemeHook):
             css=CSS_STATICS,
             js=JS_STATICS,
             html_tags="data-bs-theme=dark",
-            header_padding="3.5em"
+            header_padding="3.5em",
         )
 
 
-@hooks.register('theme_hook')
-def register_bootstrap_dark_hook():
-    return BootstrapDarkThemeHook()
-
-
-@hooks.register('theme_hook')
+@hooks.register("theme_hook")
 def register_bootstrap_hook():
     return BootstrapThemeHook()
+
+
+@hooks.register("theme_hook")
+def register_bootstrap_dark_hook():
+    return BootstrapDarkThemeHook()
