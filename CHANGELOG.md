@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.4.0] - 2023-10-08
+## [0.4.1] - 2024-05-11
+
+### Fixed
+
+- Integrity Hashes for a few files
+
+## [0.4.0] - 2024-03-16
 
 Match AA v4.x
 
