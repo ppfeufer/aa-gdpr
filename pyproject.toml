@@ -43,9 +43,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://gitlab.com/tactical-supremacy/aa-aagdpr"
-Source = "https://gitlab.com/tactical-supremacy/aa-aagdprr"
-Tracker = "https://gitlab.com/tactical-supremacy/aa-aagdpr/-/issues"
+Homepage = "https://gitlab.com/tactical-supremacy/aa-gdpr"
+Source = "https://gitlab.com/tactical-supremacy/aa-gdpr"
+Tracker = "https://gitlab.com/tactical-supremacy/aa-gdpr/-/issues"
 
 [tool.flit.module]
 name = "aagdpr"
