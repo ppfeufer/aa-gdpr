@@ -85,7 +85,8 @@ repos:
             \.po|
             \.mo|
             swagger\.json|
-            .css
+            .css|
+            (.*)/libs
           )
   - repo: https://github.com/pycqa/flake8
     rev: 7.0.0
