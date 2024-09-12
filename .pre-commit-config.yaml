@@ -84,7 +84,9 @@ repos:
             allianceauth\/static\/allianceauth\/css\/themes\/bootstrap-locals.less|
             \.po|
             \.mo|
-            swagger\.json
+            swagger\.json|
+            .css|
+            (.*)/libs
           )
   - repo: https://github.com/pycqa/flake8
     rev: 7.1.1
