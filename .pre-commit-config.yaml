@@ -14,10 +14,10 @@ repos:
     rev: 1.23.1
     hooks:
       - id: django-upgrade
-        args: [--target-version=4.0]
+        args: [--target-version=4.2]
   # Code Logic
   - repo: https://github.com/pycqa/isort
-    rev: 6.0.0
+    rev: 6.0.1
     hooks:
       - id: isort
         name: isort (python)
