@@ -3,13 +3,32 @@
 # Update this file:
 #   pre-commit autoupdate
 
+# Set the default language versions for the hooks
+default_language_version:
+  python: python3  # Force all Python hooks to use Python 3
+  node: 22.13.1  # Force all Node hooks to use Node LTS latest
+
+# Globally exclude files
+# https://pre-commit.com/#top_level-exclude
+exclude: |
+  (?x)(
+    LICENSE|
+    allianceauth\/static\/allianceauth\/css\/themes\/bootstrap-locals.less|
+    \.min\.css|
+    \.min\.js|
+    \.po|
+    \.mo|
+    swagger\.json|
+    static/(.*)/libs/
+  )
+
 repos:
   # Code Upgrades
   - repo: https://github.com/asottile/pyupgrade
     rev: v3.19.1
     hooks:
       - id: pyupgrade
-        args: [--py38-plus]
+        args: [--py310-plus]
   - repo: https://github.com/adamchainz/django-upgrade
     rev: 1.23.1
     hooks:
@@ -24,7 +43,10 @@ repos:
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
     hooks:
+      - id: python-check-blanket-noqa  # Enforce that noqa annotations always occur with specific codes. Sample annotations: # noqa: F401, # noqa: F401,W203
+      - id: python-check-blanket-type-ignore
       - id: python-check-mock-methods
+      - id: python-no-eval
       - id: python-no-log-warn
       - id: python-use-type-annotations
       - id: text-unicode-replacement-char
@@ -45,49 +67,24 @@ repos:
       - id: detect-private-key
       - id: check-case-conflict
       # Python checks
-      #      - id: check-docstring-first
+
       - id: debug-statements
-      #      - id: requirements-txt-fixer
+      - id: requirements-txt-fixer
       - id: fix-encoding-pragma
         args: [--remove]
       - id: fix-byte-order-marker
+      - id: check-builtin-literals
       # General quality checks
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
-        exclude: |
-          (?x)(
-            \.min\.css|
-            \.min\.js|
-            \.po|
-            \.mo|
-            swagger\.json
-          )
       - id: check-executables-have-shebangs
       - id: end-of-file-fixer
-        exclude: |
-          (?x)(
-            \.min\.css|
-            \.min\.js|
-            \.po|
-            \.mo|
-            swagger\.json
-          )
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 3.2.0
     hooks:
       - id: editorconfig-checker
-        exclude: |
-          (?x)(
-            LICENSE|
-            allianceauth\/static\/allianceauth\/css\/themes\/bootstrap-locals.less|
-            \.po|
-            \.mo|
-            swagger\.json|
-            .css|
-            (.*)/libs
-          )
   - repo: https://github.com/pycqa/flake8
     rev: 7.1.2
     hooks:
@@ -97,21 +94,29 @@ repos:
     rev: v1.5.0
     hooks:
       - id: yesqa
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.44.0
+    hooks:
+      - id: markdownlint
+        args:
+          - --disable=MD013
+          - --disable=MD024
   # Infrastructure
   - repo: https://github.com/tox-dev/pyproject-fmt
-    rev: v2.5.0
+    rev: v2.5.1
     hooks:
       - id: pyproject-fmt
-        name: pyproject.toml formatter
-        description: "Format the pyproject.toml file."
         args:
           - --indent=4
         additional_dependencies:
-          - tox==4.14.2 # https://github.com/tox-dev/tox/releases/latest
+          - tox==4.24.1 # https://github.com/tox-dev/tox/releases/latest
+
+  - repo: https://github.com/tox-dev/tox-ini-fmt
+    rev: 1.5.0
+    hooks:
+      - id: tox-ini-fmt
 
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.23
+    rev: v0.24
     hooks:
       - id: validate-pyproject
-        name: Validate pyproject.toml
-        description: "Validate the pyproject.toml file."
