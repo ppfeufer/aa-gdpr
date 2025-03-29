@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-29 14:38+1000\n"
+"POT-Creation-Date: 2025-03-06 09:32+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,29 +17,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: aagdpr/templates/esi/select_token.html:13
+
+#: aagdpr/templates/esi/select_token.html:15
 msgid "ESI Token Selection"
 msgstr ""
 
-#: aagdpr/templates/esi/select_token.html:44
+#: aagdpr/templates/esi/select_token.html:46
 msgid "Select Character"
 msgstr ""
 
-#: aagdpr/templates/esi/select_token.html:48
+#: aagdpr/templates/esi/select_token.html:50
 msgid "Scopes Requested"
 msgstr ""
 
-#: aagdpr/templates/esi/select_token.html:61
-#: aagdpr/templates/esi/select_token.html:98
+#: aagdpr/templates/esi/select_token.html:63
+#: aagdpr/templates/esi/select_token.html:100
 msgid "New Character"
 msgstr ""
 
-#: aagdpr/templates/esi/select_token.html:71
-#: aagdpr/templates/esi/select_token.html:107
+#: aagdpr/templates/esi/select_token.html:73
+#: aagdpr/templates/esi/select_token.html:109
 msgid "Add Token"
 msgstr ""
 
-#: aagdpr/templates/esi/select_token.html:88
-#: aagdpr/templates/esi/select_token.html:89
+#: aagdpr/templates/esi/select_token.html:90
+#: aagdpr/templates/esi/select_token.html:91
 msgid "Select"
 msgstr ""
