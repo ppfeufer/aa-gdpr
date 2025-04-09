@@ -7,8 +7,8 @@
 
 {% if locale and LANGUAGE_CODE != 'en' %}
     <!-- Moment.JS Not EN-en ({{ LANGUAGE_CODE }}) -->
-    {% get_momentjs_language_static LANGUAGE_CODE as MOMENTJS_LANG_PATH %}
+    {% get_relative_momentjs_language_path LANGUAGE_CODE as MOMENTJS_LANG_PATH %}
 
-    {% sri_static "{{ MOMENTJS_LANG_PATH }}" %}
+    {% sri_static MOMENTJS_LANG_PATH %}
 {% endif %}
 <!-- End Moment.js from aa-gdpr -->
