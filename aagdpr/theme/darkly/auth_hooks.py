@@ -17,6 +17,7 @@ class DarklyThemeHook(ThemeHook):
             self,
             "Darkly",
             "Flatly in night mode! (AA-GDPR)",
+            html_tags={"data-theme": "darkly"},
             css=[
                 {
                     "url": urljoin(

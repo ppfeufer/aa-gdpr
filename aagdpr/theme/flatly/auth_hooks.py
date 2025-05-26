@@ -17,6 +17,7 @@ class FlatlyThemeHook(ThemeHook):
             self,
             "Flatly",
             "Flat and modern! (AA-GDPR)",
+            html_tags={"data-theme": "flatly"},
             css=[
                 {
                     "url": urljoin(

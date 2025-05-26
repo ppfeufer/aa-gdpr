@@ -17,6 +17,7 @@ class MateriaThemeHook(ThemeHook):
             self,
             "Materia",
             "Material is the metaphor (AA-GDPR)",
+            html_tags={"data-theme": "materia"},
             css=[
                 {
                     "url": urljoin(
