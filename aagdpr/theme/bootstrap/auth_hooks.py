@@ -44,6 +44,7 @@ class BootstrapThemeHook(ThemeHook):
             "Powerful, extensible, and feature-packed frontend toolkit.",
             css=CSS_STATICS,
             js=JS_STATICS,
+            html_tags={"data-theme": "bootstrap"},
             header_padding="3.5em",
         )
 
@@ -61,7 +62,7 @@ class BootstrapDarkThemeHook(ThemeHook):
             "Powerful, extensible, and feature-packed frontend toolkit.",
             css=CSS_STATICS,
             js=JS_STATICS,
-            html_tags="data-bs-theme=dark",
+            html_tags={"data-theme": "bootstrap-dark", "data-bs-theme": "dark"},
             header_padding="3.5em",
         )
 
