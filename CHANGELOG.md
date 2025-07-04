@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased] - yyyy-mm-dd
+
+### Added
+
+### Changed
+
+### Fixed
+
+## [0.6.2] - 2025-04-07
+
+### Fixed
+
+- Theme Data Attributes
+- Use new AA templatetags to determine relative staticfile paths [MR 1714](https://gitlab.com/allianceauth/allianceauth/-/merge_requests/1714)
+
+## [0.6.0] - 2025-02-27
+
+### Added
+
+- Django SRI for staticfile delivered files
+
+### Changed
+
+- Dropped Support for Python 3.8 and 3.9
+- Added testing against AAv5 Alpha
+
 ## [0.5.0] - 2025-02-27
 
 ## Changed
