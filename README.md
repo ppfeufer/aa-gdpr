@@ -11,29 +11,30 @@ Overrides Alliance Auth default resource bundles to use staticfile delivery.
 Local staticfile delivery of resources to avoid using CDNs
 
 - Javascript
-  - Less.js 4.2.0
-  - Moment.js 2.29.4 <https://github.com/moment/moment>
+  - Bootswatch 5.3.3, 5.3.7 Materia Flatly Darkly <http://bootswatch.com>
+  - Clipboard.js 2.0.11 <https://clipboardjs.com/>
+  - DataTables 1.13.7 , 2.3.2 <http://datatables.net/>
+    - DataTables.net-bs5
+    - DataTables.bet-bs (Bootstrap 3)
   - jQuery 2.2.4, 3.7.0 <https://github.com/jquery/jquery>
   - jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
   - jQuery-UI 1.13.2 <https://jqueryui.com/>
-  - Twitter-Bootstrap 3.4.1, 5.3.3 <https://github.com/twbs/bootstrap>
-  - Bootswatch 5.3.3 Materia Flatly Darkly <http://bootswatch.com>
+  - Less.js 4.2.0, 4.3.0
+  - Moment.js 2.29.4, 2.30.1 <https://github.com/moment/moment>
+  - Twitter-Bootstrap 5.3.3, 5.3.7 <https://github.com/twbs/bootstrap>
   - x-editable 1.5.1 <http://vitalets.github.io/x-editable>
-  - Less 2.7.3 & 3.12.2 <http://lesscss.org/>
-  - DataTables 1.13.7<http://datatables.net/>
-    - DataTables.net-bs5
-    - DataTables.bet-bs (Bootstrap 3)
-  - Clipboard.js 2.0.11 <https://clipboardjs.com/>
+
 - Fonts
   - FontAwesome 5.15.4, 6.4.2 <https://github.com/FortAwesome/Font-Awesome>
   - OFL Lato v16, v24 <https://fonts.google.com/specimen/Lato>
-  - OFL Roboto v30 <https://fonts.google.com/specimen/Roboto>
+  - OFL Roboto v30, v48 <https://fonts.google.com/specimen/Roboto>
 - CSS
-  - DataTables.net 1.10.21, 1.13.7 <http://datatables.net/>
-  - datatables.net-bs5 1.13.7 <http://datatables.net/>
-  - FontAwesome 5.11.2, 5.14.0, 5.15.4 <https://github.com/FortAwesome/Font-Awesome>
+  - DataTables 1.10.21, 1.13.7, 2.3.2 <http://datatables.net/>
+    - datatables.net-bs5 1.13.7, 2.3.2 <http://datatables.net/>
+    - DataTables.bet-bs (Bootstrap 3) bundled with earlier versions of DT
+  - FontAwesome 5.11.2, 5.14.0, 5.15.4, 6.7.2 <https://github.com/FortAwesome/Font-Awesome>
   - jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
-  - jQuery-UI 1.12.1 <https://jqueryui.com/>
+  - jQuery-UI 1.12.1, 1.14.1 <https://jqueryui.com/>
   - x-editable 1.5.1 <http://vitalets.github.io/x-editable>
 - AA v4.x Themes
   - Darkly
