@@ -13,6 +13,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [0.7.0] - 2025-07-08
+
+### Added
+
+- A Whole bunch of new files to prepare for AA v5
+
+### Fixed
+
+- Django-ESI hotfix
+
 ## [0.6.2] - 2025-04-07
 
 ### Fixed
