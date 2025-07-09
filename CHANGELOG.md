@@ -13,6 +13,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 
+## [0.7.1] - 2025-07-09
+
+### Fixed
+
+- Roboto V48 now uses regular for weight, not 400
+
 ## [0.7.0] - 2025-07-08
 
 ### Added
