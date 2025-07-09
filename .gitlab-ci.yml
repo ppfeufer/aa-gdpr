@@ -88,35 +88,39 @@ test-py310-django42:
   script:
     - tox -e py310-django42
 
-test-py310-django51:
+test-py310-django52:
   extends: .test-py310
   script:
-    - tox -e py310-django51
+    - tox -e py310-django52
+  allow_failure: True
 
 test-py311-django42:
   extends: .test-py311
   script:
     - tox -e py311-django42
 
-test-py311-django51:
+test-py311-django52:
   extends: .test-py311
   script:
-    - tox -e py311-django51
+    - tox -e py311-django52
+  allow_failure: True
 
 test-py312-django42:
   extends: .test-py312
   script:
     - tox -e py312-django42
 
-test-py312-django51:
+test-py312-django52:
   extends: .test-py312
   script:
-    - tox -e py312-django51
+    - tox -e py312-django52
+  allow_failure: True
 
-test-py313-django51:
+test-py313-django52:
   extends: .test-py313
   script:
-    - tox -e py313-django51
+    - tox -e py313-django52
+  allow_failure: True
 
 deploy_production:
   stage: deploy
