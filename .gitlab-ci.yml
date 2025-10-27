@@ -17,7 +17,7 @@ before_script:
 
 pre-commit-check:
   stage: pre-commit
-  image: python:3.12-bookworm
+  image: python:3.14-trixie
   variables:
     PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
   cache:
@@ -45,7 +45,7 @@ secret_detection:
 
 .test-py310:
   stage: test
-  image: python:3.10-bookworm
+  image: python:3.10-trixie
   artifacts:
     when: always
     reports:
@@ -55,7 +55,7 @@ secret_detection:
 
 .test-py311:
   stage: test
-  image: python:3.11-bookworm
+  image: python:3.11-trixie
   artifacts:
     when: always
     reports:
@@ -65,7 +65,7 @@ secret_detection:
 
 .test-py312:
   stage: test
-  image: python:3.12-bookworm
+  image: python:3.12-trixie
   artifacts:
     when: always
     reports:
@@ -75,7 +75,18 @@ secret_detection:
 
 .test-py313:
   stage: test
-  image: python:3.13-bookworm
+  image: python:3.13-trixie
+  artifacts:
+    when: always
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+
+
+.test-py314:
+  stage: test
+  image: python:3.14-trixie
   artifacts:
     when: always
     reports:
@@ -122,9 +133,15 @@ test-py313-django52:
     - tox -e py313-django52
   allow_failure: True
 
+test-py314-django52:
+  extends: .test-py314
+  script:
+    - tox -e py314-django52
+  allow_failure: True
+
 deploy_production:
   stage: deploy
-  image: python:3.12-bookworm
+  image: python:3.14-trixie
 
   before_script:
     - python -m pip install --upgrade pip
