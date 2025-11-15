@@ -70,8 +70,6 @@ repos:
 
       - id: debug-statements
       - id: requirements-txt-fixer
-      - id: fix-encoding-pragma
-        args: [--remove]
       - id: fix-byte-order-marker
       - id: check-builtin-literals
       # General quality checks
