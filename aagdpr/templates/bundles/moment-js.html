@@ -1,7 +1,7 @@
 {% load aa_i18n sri %}
 
-<!-- Start Moment.js from cdnjs -->
-{% sri_static 'aagdpr/ajax/libs/moment.js/2.30.1/moment.min.js' %}
+<!-- Start Moment.js from AA-GDPR -->
+{% sri_static "aagdpr/ajax/libs/moment.js/2.30.1/moment.min.js" %}
 
 {% if locale and LANGUAGE_CODE != 'en' %}
     <!-- Moment.JS Not EN-en ({{ LANGUAGE_CODE }}) -->
@@ -9,4 +9,4 @@
 
     <script src="{{ MOMENTJS_LANG_PATH }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endif %}
-<!-- End Moment JS from cdnjs -->
+<!-- End Moment JS from AA-GDPR -->
