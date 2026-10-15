@@ -1,7 +1,10 @@
+# Standard Library
 from urllib.parse import urljoin
 
+# Django
 from django.conf import settings
 
+# Alliance Auth
 from allianceauth import hooks
 from allianceauth.theme.hooks import ThemeHook
 

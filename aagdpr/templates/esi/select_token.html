@@ -1,7 +1,4 @@
-{% load i18n %}
-{% load scope_tags %}
-{% load sri %}
-{% load static %}
+{% load i18n scope_tags sri static %}
 
 
 <html lang="en">
@@ -69,7 +66,7 @@
                                         {% csrf_token %}
                                         <input type="hidden" name="_add" value="True">
                                         <a href="#" type="submit" class="m-1">
-                                            <input type="image" name="go" src="{% static 'esi/img/EVE_SSO_Login_Buttons_Small_Black.png'%}"
+                                            <input type="image" name="go" src="{% static 'esi/img/EVE_SSO_Login_Buttons_Small_Black.png' %}"
                                                 alt="{% translate "Add Token" %}">
                                         </a>
                                 </div>
@@ -105,7 +102,7 @@
                             <div class="card-footer">
                                     <input type="hidden" name="_add" value="True">
                                     <a href="#" type="submit" class="m-1">
-                                        <input type="image" name="go" src="{% static 'esi/img/EVE_SSO_Login_Buttons_Small_Black.png'%}"
+                                        <input type="image" name="go" src="{% static 'esi/img/EVE_SSO_Login_Buttons_Small_Black.png' %}"
                                             alt="{% translate "Add Token" %}">
                                     </a>
                             </div>
