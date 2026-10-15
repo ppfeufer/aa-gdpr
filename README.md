@@ -26,6 +26,7 @@ ______________________________________________________________________
 - [Installation](#installation)
   - [Step 1: Install](#step-1-install)
   - [Step 2: Configure](#step-2-configure)
+- [Credits](#credits)
 
 <!-- mdformat-toc end -->
 
@@ -62,8 +63,14 @@ INSTALLED_APPS += [
 INSTALLED_APPS = ["aagdpr"] + INSTALLED_APPS
 ```
 
-Now that's done, run statuc collection
+Now that's done, run static collection
 
 ```shell
 python manage.py collectstatic
 ```
+
+## Credits<a name="credits"></a>
+
+Thanks to [Ariel Rin (@soratidus999)](https://github.com/soratidus999) for creating and
+maintaining this app for a long time for the Alliance Auth community. Your
+contributions are greatly appreciated!
