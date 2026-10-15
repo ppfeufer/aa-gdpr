@@ -26,6 +26,7 @@ ______________________________________________________________________
 - [Installation](#installation)
   - [Step 1: Install](#step-1-install)
   - [Step 2: Configure](#step-2-configure)
+- [Migrating From Previous Versions (v0.7.x and below)](#migrating-from-previous-versions-v07x-and-below)
 - [Credits](#credits)
 
 <!-- mdformat-toc end -->
@@ -68,6 +69,21 @@ Now that's done, run static collection
 ```shell
 python manage.py collectstatic
 ```
+
+## Migrating From Previous Versions (v0.7.x and below)<a name="migrating-from-previous-versions-v07x-and-below"></a>
+
+This is a complete rewrite of the app and will require you to remove the old
+implementation from your `local.py` file and replace it with the new one.
+
+Since there are a lot of options with the old implementation, I cannot provide a
+complete list of what to remove. However, you can check the
+old [README](https://gitlab.com/ppfeufer/aa-gdpr/#step-two---configure) for what to
+remove. It is safe to assume that you can remove anything that is mentioned there in
+the install section to be added to your `local.py` file.
+
+Once done and you've cleaned up your `local.py` file, you can add the new
+implementation as described in the
+"[Step 2: Configure](https://github.com/ppfeufer/aa-gdpr#step-2-configure)" section above.
 
 ## Credits<a name="credits"></a>
 

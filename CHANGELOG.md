@@ -48,6 +48,20 @@ Section Order:
 
 <!-- Your changes go here -->
 
+> [!IMPORTANT]
+>
+> This is a full rework of the app. If you have been running this app until now,
+> please ensure to remove the old implementation in your `local.py` and replace it
+> with the new one. (See the [README](https://github.com/ppfeufer/aa-gdpr#installation) for details.)
+
+### Added
+
+- Short migration guide for users of previous versions of the app to the README
+
+### Changed
+
+- Full rework of the AA-GDPR staticfiles to match AA v5 in its current state.
+
 ## [0.7.1] - 2025-07-09
 
 ### Fixed
