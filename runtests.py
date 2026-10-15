@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+
+# Standard Library
 import sys
 
 
 def main() -> None:
     """Run administrative tasks."""
     try:
+        # Django
         from django.core.management import execute_from_command_line
     except ImportError as exc:
         raise ImportError(
@@ -16,5 +19,5 @@ def main() -> None:
     execute_from_command_line(sys.argv.insert(1, "test"))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

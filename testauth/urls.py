@@ -1,4 +1,5 @@
 # Django
+# Django
 from django.urls import include, path
 
 # Alliance Auth

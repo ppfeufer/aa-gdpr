@@ -1,3 +1,4 @@
+# Django
 from django.conf import settings
 
 # Attempt to load JS/CSS/Fonts from staticfiles when possible

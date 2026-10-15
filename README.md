@@ -4,13 +4,30 @@ A Collection of overrides and resources to help Alliance Auth installs meet GDPR
 
 This Repository cannot guarantee your Legal requirements but aims to reduce the technical burden on Web/System Administrators
 
-## Current Features
+______________________________________________________________________
+
+<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=2 -->
+
+- [Current Features](#current-features)
+- [Planned Features](#planned-features)
+- [Installation](#installation)
+  - [Step One - Install](#step-one---install)
+  - [Step Two - Configure](#step-two---configure)
+  - [Step Three - Update Project](#step-three---update-project)
+- [Settings](#settings)
+
+<!-- mdformat-toc end -->
+
+______________________________________________________________________
+
+## Current Features<a name="current-features"></a>
 
 Overrides Alliance Auth default resource bundles to use staticfile delivery.
 
 Local staticfile delivery of resources to avoid using CDNs
 
 - Javascript
+
   - Bootswatch 5.3.3, 5.3.7 Materia Flatly Darkly <http://bootswatch.com>
   - Clipboard.js 2.0.11 <https://clipboardjs.com/>
   - DataTables 1.13.7 , 2.3.2 <http://datatables.net/>
@@ -25,10 +42,13 @@ Local staticfile delivery of resources to avoid using CDNs
   - x-editable 1.5.1 <http://vitalets.github.io/x-editable>
 
 - Fonts
+
   - FontAwesome 5.15.4, 6.4.2 <https://github.com/FortAwesome/Font-Awesome>
   - OFL Lato v16, v24 <https://fonts.google.com/specimen/Lato>
   - OFL Roboto v30, v48 <https://fonts.google.com/specimen/Roboto>
+
 - CSS
+
   - DataTables 1.10.21, 1.13.7, 2.3.2 <http://datatables.net/>
     - datatables.net-bs5 1.13.7, 2.3.2 <http://datatables.net/>
     - DataTables.bet-bs (Bootstrap 3) bundled with earlier versions of DT
@@ -36,21 +56,23 @@ Local staticfile delivery of resources to avoid using CDNs
   - jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
   - jQuery-UI 1.12.1, 1.14.1 <https://jqueryui.com/>
   - x-editable 1.5.1 <http://vitalets.github.io/x-editable>
+
 - AA v4.x Themes
+
   - Darkly
   - Flatly
   - Materia
 
-## Planned Features
+## Planned Features<a name="planned-features"></a>
 
 - Consent Management
 - Terms of Use Management
 - Data Transparency
 - Right to be Forgotten Requests
 
-## Installation
+## Installation<a name="installation"></a>
 
-### Step One - Install
+### Step One - Install<a name="step-one---install"></a>
 
 Install the app with your venv active
 
@@ -58,24 +80,24 @@ Install the app with your venv active
 pip install aa-gdpr
 ```
 
-### Step Two - Configure
+### Step Two - Configure<a name="step-two---configure"></a>
 
 - Add the following lines directly before your `INSTALLED_APPS` list in your projects `local.py`
 
 ```python
-INSTALLED_APPS.insert(0, 'aagdpr')
-INSTALLED_APPS.remove('allianceauth.theme.darkly')
-INSTALLED_APPS.remove('allianceauth.theme.flatly')
-INSTALLED_APPS.remove('allianceauth.theme.materia')
+INSTALLED_APPS.insert(0, "aagdpr")
+INSTALLED_APPS.remove("allianceauth.theme.darkly")
+INSTALLED_APPS.remove("allianceauth.theme.flatly")
+INSTALLED_APPS.remove("allianceauth.theme.materia")
 ```
 
 - Add the following to `INSTALLED_APPS`
 
 ```python
-'aagdpr.theme.bootstrap',
-'aagdpr.theme.darkly',
-'aagdpr.theme.flatly',
-'aagdpr.theme.materia',
+"aagdpr.theme.bootstrap",
+"aagdpr.theme.darkly",
+"aagdpr.theme.flatly",
+"aagdpr.theme.materia",
 ```
 
 - Add the below lines to your `local.py` settings file
@@ -89,11 +111,11 @@ DEFAULT_THEME = "aagdpr.theme.flatly.auth_hooks.FlatlyThemeHook"
 DEFAULT_THEME_DARK = "aagdpr.theme.darkly.auth_hooks.DarklyThemeHook"  # Legacy AAv3 user.profile.night_mode=1
 ```
 
-### Step Three - Update Project
+### Step Three - Update Project<a name="step-three---update-project"></a>
 
 - Run migrations `python manage.py migrate` (There should be none yet)
 - Gather your staticfiles `python manage.py collectstatic`
 
-## Settings
+## Settings<a name="settings"></a>
 
 `AVOID_CDN` - Will attempt to instruct third party applications to attempt to load CSS JS and Fonts from staticfiles, Default `True`.
