@@ -115,74 +115,67 @@ Section Order:
 
 - Maintenance Release
 
-## [0.3.3 PreRelease] - 2021-12-28
+## [0.3.3 Pre-Release] - 2021-12-28
 
 ### Added
 
 - Missing jQuery-UI images. (@ppfeufer)
 
-## [0.3.2 PreRelease] - 2021-10-30
+## [0.3.2 Pre-Release] - 2021-10-30
 
 ### Added
 
 - jQuery-UI
 
-## [0.3.1 PreRelease] - 2021-10-30
+## [0.3.1 Pre-Release] - 2021-10-30
 
 ### Changed
 
 - Compile fresh CSS using --advanced + aa-gdpr local resources as per AA 2.9.3.
 
-## [0.3.0 PreRelease] - 2021-10-30
+## [0.3.0 Pre-Release] - 2021-10-30
 
 ### Changed
 
 - Many package versions updated to be in line with AA 2.9.3
 
-## [0.2.5 PreRelease] - 2021-03-26
+## [0.2.5 Pre-Release] - 2021-03-26
 
 ### Changed
 
 - Updates to Clipboard.js
 
-## [0.2.4 PreRelease] - 2020-09-11
+## [0.2.4 Pre-Release] - 2020-09-11
 
 ### Added
 
 - Add jquery-visibility for Alliance Auth v2.8.2 (@ppfeufer)
 
-## [0.2.3 PreRelease] - 2020-09-11
-
 ### Fixed
 
 - Django-ESI 2.0.5 Support
 
-## [0.2.2 PreRelease] - 2020-09-11
+## [0.2.2 Pre-Release] - 2020-09-11
 
 ### Fixed
 
 - Django 3.1 Support
-
-## [0.2.1 PreRelease] - 2020-09-11
-
-### Fixed
-
 - Moment-JS Localisation now loads in the right order and properly passes
   Language_Code (Credit: @ppfeufer)
 
-## [0.2.0 PreRelease] - 2020-08-27
+## [0.2.0 Pre-Release] - 2020-08-27
 
 ### Added
 
 - Django-ESI Template overrides
 
-## [0.1.1 PreRelease] - 2020-08-27
+## [0.1.1 Pre-Release] - 2020-08-27
 
 ### Fixed
 
 - Deliver x-editable for bootstrap 3, not 2.
 
-## [0.1.0 PreRelease] - 2020-08-27
+## [0.1.0 Pre-Release] - 2020-08-27
 
 ### Added
 
@@ -190,6 +183,24 @@ Section Order:
 
 <!-- Links to be updated upon release -->
 
-[in development]: https://github.com/ppfeufer/REPOSITORY/compare/v0.0.1...HEAD "In Development"
+[0.1.0 pre-release]: https://github.com/ppfeufer/aa-gdpr/commits/v0.1.0 "v0.1.0 Pre-Release"
+[0.1.1 pre-release]: https://github.com/ppfeufer/aa-gdpr/compare/0.1.0...0.1.1 "v0.1.1 Pre-Release"
+[0.2.0 pre-release]: https://github.com/ppfeufer/aa-gdpr/compare/0.1.1...0.2.0 "v0.2.0 Pre-Release"
+[0.2.2 pre-release]: https://github.com/ppfeufer/aa-gdpr/compare/0.2.0...0.2.2 "v0.2.2 Pre-Release"
+[0.2.4 pre-release]: https://github.com/ppfeufer/aa-gdpr/compare/0.2.2...0.2.4 "v0.2.4 Pre-Release"
+[0.2.5 pre-release]: https://github.com/ppfeufer/aa-gdpr/compare/0.2.4...0.2.5 "v0.2.5 Pre-Release"
+[0.3.0 pre-release]: https://github.com/ppfeufer/aa-gdpr/compare/0.2.5...0.3.0 "v0.3.0 Pre-Release"
+[0.3.1 pre-release]: https://github.com/ppfeufer/aa-gdpr/compare/0.3.0...0.3.1 "v0.3.1 Pre-Release"
+[0.3.2 pre-release]: https://github.com/ppfeufer/aa-gdpr/compare/0.3.1...0.3.2 "v0.3.2 Pre-Release"
+[0.3.3 pre-release]: https://github.com/ppfeufer/aa-gdpr/compare/0.3.2...0.3.3 "v0.3.3 Pre-Release"
+[0.3.4]: https://github.com/ppfeufer/aa-gdpr/compare/0.3.3...v0.3.4 "v0.3.4"
+[0.4.0]: https://github.com/ppfeufer/aa-gdpr/compare/v0.3.4...v0.4.0 "v0.4.0"
+[0.4.1]: https://github.com/ppfeufer/aa-gdpr/compare/v0.4.0...v0.4.1 "v0.4.1"
+[0.5.0]: https://github.com/ppfeufer/aa-gdpr/compare/v0.4.1...v0.5.0 "v0.5.0"
+[0.6.0]: https://github.com/ppfeufer/aa-gdpr/compare/v0.5.0...v0.6.0 "v0.6.0"
+[0.6.2]: https://github.com/ppfeufer/aa-gdpr/compare/v0.6.0...v0.6.2 "v0.6.2"
+[0.7.0]: https://github.com/ppfeufer/aa-gdpr/compare/v0.6.2...v0.7.0 "v0.7.0"
+[0.7.1]: https://github.com/ppfeufer/aa-gdpr/compare/v0.7.0...v0.7.1 "v0.7.1"
+[in development]: https://github.com/ppfeufer/aa-gdpr/compare/v0.7.1...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
