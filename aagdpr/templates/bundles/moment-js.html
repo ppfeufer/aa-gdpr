@@ -1,12 +1,12 @@
-{% load aa_i18n i18n sri %}
+{% load aa_i18n sri %}
 
-<!-- Start Moment.js from aa-gdpr -->
-{% sri_static "aagdpr/ajax/libs/moment.js/2.29.4/moment.min.js" %}
+<!-- Start Moment.js from cdnjs -->
+{% sri_static 'aagdpr/ajax/libs/moment.js/2.30.1/moment.min.js' %}
 
 {% if locale and LANGUAGE_CODE != 'en' %}
     <!-- Moment.JS Not EN-en ({{ LANGUAGE_CODE }}) -->
-    {% get_relative_momentjs_language_path LANGUAGE_CODE as MOMENTJS_LANG_PATH %}
+    {% get_momentjs_language_static LANGUAGE_CODE as MOMENTJS_LANG_PATH %}
 
-    {% sri_static MOMENTJS_LANG_PATH %}
+    <script src="{{ MOMENTJS_LANG_PATH }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endif %}
-<!-- End Moment.js from aa-gdpr -->
+<!-- End Moment JS from cdnjs -->

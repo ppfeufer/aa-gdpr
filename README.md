@@ -1,5 +1,20 @@
 # AA-GDPR
 
+[![Version](https://img.shields.io/pypi/v/aa-gdpr?label=release)](https://pypi.org/project/aa-gdpr/)
+[![License](https://img.shields.io/badge/license-GPLv3-green)](https://pypi.org/project/aa-gdpr/)
+[![Python](https://img.shields.io/pypi/pyversions/aa-gdpr)](https://pypi.org/project/aa-gdpr/)
+[![Django](https://img.shields.io/pypi/djversions/aa-gdpr?label=django)](https://pypi.org/project/aa-gdpr/)
+![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ppfeufer/aa-gdpr/master.svg)](https://results.pre-commit.ci/latest/github/ppfeufer/aa-gdpr/master)
+[![Code Style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](http://black.readthedocs.io/en/latest/)
+[![Automated Checks](https://github.com/ppfeufer/aa-gdpr/actions/workflows/automated-checks.yml/badge.svg)](https://github.com/ppfeufer/aa-gdpr/actions/workflows/automated-checks.yml)
+[![codecov](https://codecov.io/gh/ppfeufer/aa-gdpr/branch/master/graph/badge.svg?token=GNE88NUAKK)](https://codecov.io/gh/ppfeufer/aa-gdpr)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/ppfeufer/aa-gdpr/blob/master/CODE_OF_CONDUCT.md)
+[![Discord](https://img.shields.io/discord/399006117012832262?label=discord)](https://discord.gg/fjnHAmk)
+[![Alliance Auth Compatibility](https://img.shields.io/badge/Alliance_Auth-v5-brightgreen)](https://gitlab.com/allianceauth/allianceauth)
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8CL1BY)
+
 A Collection of overrides and resources to help Alliance Auth installs meet GDPR legislation.
 
 This Repository cannot guarantee your Legal requirements but aims to reduce the technical burden on Web/System Administrators
@@ -8,114 +23,54 @@ ______________________________________________________________________
 
 <!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=2 -->
 
-- [Current Features](#current-features)
-- [Planned Features](#planned-features)
 - [Installation](#installation)
-  - [Step One - Install](#step-one---install)
-  - [Step Two - Configure](#step-two---configure)
-  - [Step Three - Update Project](#step-three---update-project)
-- [Settings](#settings)
+  - [Step 1: Install](#step-1-install)
+  - [Step 2: Configure](#step-2-configure)
+- [Credits](#credits)
 
 <!-- mdformat-toc end -->
 
 ______________________________________________________________________
 
-## Current Features<a name="current-features"></a>
-
-Overrides Alliance Auth default resource bundles to use staticfile delivery.
-
-Local staticfile delivery of resources to avoid using CDNs
-
-- Javascript
-
-  - Bootswatch 5.3.3, 5.3.7 Materia Flatly Darkly <http://bootswatch.com>
-  - Clipboard.js 2.0.11 <https://clipboardjs.com/>
-  - DataTables 1.13.7 , 2.3.2 <http://datatables.net/>
-    - DataTables.net-bs5
-    - DataTables.bet-bs (Bootstrap 3)
-  - jQuery 2.2.4, 3.7.0 <https://github.com/jquery/jquery>
-  - jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
-  - jQuery-UI 1.13.2 <https://jqueryui.com/>
-  - Less.js 4.2.0, 4.3.0
-  - Moment.js 2.29.4, 2.30.1 <https://github.com/moment/moment>
-  - Twitter-Bootstrap 5.3.3, 5.3.7 <https://github.com/twbs/bootstrap>
-  - x-editable 1.5.1 <http://vitalets.github.io/x-editable>
-
-- Fonts
-
-  - FontAwesome 5.15.4, 6.4.2 <https://github.com/FortAwesome/Font-Awesome>
-  - OFL Lato v16, v24 <https://fonts.google.com/specimen/Lato>
-  - OFL Roboto v30, v48 <https://fonts.google.com/specimen/Roboto>
-
-- CSS
-
-  - DataTables 1.10.21, 1.13.7, 2.3.2 <http://datatables.net/>
-    - datatables.net-bs5 1.13.7, 2.3.2 <http://datatables.net/>
-    - DataTables.bet-bs (Bootstrap 3) bundled with earlier versions of DT
-  - FontAwesome 5.11.2, 5.14.0, 5.15.4, 6.7.2 <https://github.com/FortAwesome/Font-Awesome>
-  - jQuery-DateTimePicker 2.5.20 <https://github.com/xdan/datetimepicker>
-  - jQuery-UI 1.12.1, 1.14.1 <https://jqueryui.com/>
-  - x-editable 1.5.1 <http://vitalets.github.io/x-editable>
-
-- AA v4.x Themes
-
-  - Darkly
-  - Flatly
-  - Materia
-
-## Planned Features<a name="planned-features"></a>
-
-- Consent Management
-- Terms of Use Management
-- Data Transparency
-- Right to be Forgotten Requests
+> [!WARNING]
+>
+> Don't install this app just yet. The latest version is not compatible with
+> current Alliance Auth and will most likely break things!
+>
+> I am waiting on a couple of PRs to be merged into Alliance Auth before I can
+> update this app to be compatible with current Alliance Auth.
 
 ## Installation<a name="installation"></a>
 
-### Step One - Install<a name="step-one---install"></a>
+### Step 1: Install<a name="step-1-install"></a>
 
 Install the app with your venv active
 
 ```shell
-pip install aa-gdpr
+pip install aa-gdpr==0.7.1
 ```
 
-### Step Two - Configure<a name="step-two---configure"></a>
+### Step 2: Configure<a name="step-2-configure"></a>
 
-- Add the following lines directly before your `INSTALLED_APPS` list in your projects `local.py`
+Add the following line _after_ your `INSTALLED_APPS` list in your projects `local.py`
 
 ```python
-INSTALLED_APPS.insert(0, "aagdpr")
-INSTALLED_APPS.remove("allianceauth.theme.darkly")
-INSTALLED_APPS.remove("allianceauth.theme.flatly")
-INSTALLED_APPS.remove("allianceauth.theme.materia")
+INSTALLED_APPS += [
+    # … A bunch of apps …
+]
+
+# Ensure this is the last line that starts with `INSTALLED_APPS` in your local.py file
+INSTALLED_APPS = ["aagdpr"] + INSTALLED_APPS
 ```
 
-- Add the following to `INSTALLED_APPS`
+Now that's done, run static collection
 
-```python
-"aagdpr.theme.bootstrap",
-"aagdpr.theme.darkly",
-"aagdpr.theme.flatly",
-"aagdpr.theme.materia",
+```shell
+python manage.py collectstatic
 ```
 
-- Add the below lines to your `local.py` settings file
+## Credits<a name="credits"></a>
 
-```python
-## Settings for AA-GDPR ##
-
-# Instruct third party apps to avoid CDNs
-AVOID_CDN = True
-DEFAULT_THEME = "aagdpr.theme.flatly.auth_hooks.FlatlyThemeHook"
-DEFAULT_THEME_DARK = "aagdpr.theme.darkly.auth_hooks.DarklyThemeHook"  # Legacy AAv3 user.profile.night_mode=1
-```
-
-### Step Three - Update Project<a name="step-three---update-project"></a>
-
-- Run migrations `python manage.py migrate` (There should be none yet)
-- Gather your staticfiles `python manage.py collectstatic`
-
-## Settings<a name="settings"></a>
-
-`AVOID_CDN` - Will attempt to instruct third party applications to attempt to load CSS JS and Fonts from staticfiles, Default `True`.
+Thanks to [Ariel Rin (@soratidus999)](https://github.com/soratidus999) for creating and
+maintaining this app for a long time for the Alliance Auth community. Your
+contributions are greatly appreciated!

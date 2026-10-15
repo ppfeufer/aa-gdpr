@@ -1,13 +1,13 @@
 [run]
 branch = True
-source = aa_intel_tool
+source = aagdpr
 
 [report]
 exclude_lines =
     if self.debug:
     pragma: no cover
     raise NotImplementedError
-    if __name__ == .__main__.:
+    if __name__ == "__main__":
 ignore_errors = True
 omit =
     setup.py
