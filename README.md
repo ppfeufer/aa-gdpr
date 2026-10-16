@@ -23,10 +23,24 @@ ______________________________________________________________________
 
 <!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=2 -->
 
+- [Compatibility](#compatibility)
+  - [Alliance Auth](#alliance-auth)
+  - [AA Bootswatch](#aa-bootswatch)
 - [Installation](#installation)
-  - [Step 1: Install](#step-1-install)
-  - [Step 2: Configure](#step-2-configure)
+  - [Bare Metal](#bare-metal)
+    - [Step 1: Install the App](#step-1-install-the-app)
+    - [Step 2: Update Your AA Settings](#step-2-update-your-aa-settings)
+    - [Step 3: Finalizing the Installation](#step-3-finalizing-the-installation)
+  - [Docker](#docker)
+    - [Step 1: Add the App](#step-1-add-the-app)
+    - [Step 2: Update Your AA Settings](#step-2-update-your-aa-settings-1)
+    - [Step 3: Build Auth and Restart Your Containers](#step-3-build-auth-and-restart-your-containers)
+    - [Step 4: Finalizing the Installation](#step-4-finalizing-the-installation)
+- [Updating](#updating)
+  - [Bare Metal](#bare-metal-1)
+  - [Docker](#docker-1)
 - [Migrating From Previous Versions (v0.7.x and below)](#migrating-from-previous-versions-v07x-and-below)
+- [Contributing](#contributing)
 - [Credits](#credits)
 
 <!-- mdformat-toc end -->
@@ -41,9 +55,29 @@ ______________________________________________________________________
 > I am waiting on a couple of PRs to be merged into Alliance Auth before I can
 > update this app to be compatible with current Alliance Auth.
 
+## Compatibility<a name="compatibility"></a>
+
+### Alliance Auth<a name="alliance-auth"></a>
+
+This app is compatible
+with [Alliance Auth](https://gitlab.com/allianceauth/allianceauth) v5.0.0 and above.
+
+If you are using an older version of Alliance Auth, please update to the latest
+version before installing this app.
+
+### AA Bootswatch<a name="aa-bootswatch"></a>
+
+This app is compatible
+with [AA Bootswatch](https://gitlab.com/tactical-supremacy/aa-bootswatch) v1.0.0 and above.
+
+If you are using AA Bootswatch, please update to the latest version before
+installing this app.
+
 ## Installation<a name="installation"></a>
 
-### Step 1: Install<a name="step-1-install"></a>
+### Bare Metal<a name="bare-metal"></a>
+
+#### Step 1: Install the App<a name="step-1-install-the-app"></a>
 
 Install the app with your venv active
 
@@ -51,9 +85,10 @@ Install the app with your venv active
 pip install aa-gdpr==0.7.1
 ```
 
-### Step 2: Configure<a name="step-2-configure"></a>
+#### Step 2: Update Your AA Settings<a name="step-2-update-your-aa-settings"></a>
 
-Add the following line _after_ your `INSTALLED_APPS` list in your projects `local.py`
+Add the following line _after_ your `INSTALLED_APPS` list in your projects
+`local.py`, like so:
 
 ```python
 INSTALLED_APPS += [
@@ -64,10 +99,94 @@ INSTALLED_APPS += [
 INSTALLED_APPS = ["aagdpr"] + INSTALLED_APPS
 ```
 
-Now that's done, run static collection
+#### Step 3: Finalizing the Installation<a name="step-3-finalizing-the-installation"></a>
+
+Now that's done, run static collection:
 
 ```shell
 python manage.py collectstatic
+```
+
+And restart your supervisor.
+
+### Docker<a name="docker"></a>
+
+#### Step 1: Add the App<a name="step-1-add-the-app"></a>
+
+Add the following line to your `conf/requirements.txt` file
+
+```
+aa-gdpr==0.7.1
+```
+
+#### Step 2: Update Your AA Settings<a name="step-2-update-your-aa-settings-1"></a>
+
+Add the following line _after_ your `INSTALLED_APPS` list in your projects
+`conf/local.py`, like so:
+
+```python
+INSTALLED_APPS += [
+    # … A bunch of apps …
+]
+
+# Ensure this is the last line that starts with `INSTALLED_APPS` in your local.py file
+INSTALLED_APPS = ["aagdpr"] + INSTALLED_APPS
+```
+
+#### Step 3: Build Auth and Restart Your Containers<a name="step-3-build-auth-and-restart-your-containers"></a>
+
+Now that's done, rebuild your docker image and restart your containers.
+
+```shell
+docker compose build --no-cache
+docker compose --env-file=.env up -d
+```
+
+#### Step 4: Finalizing the Installation<a name="step-4-finalizing-the-installation"></a>
+
+Now that your containers are up and running, run static collection:
+
+```shell
+docker compose exec allianceauth_gunicorn bash
+
+auth collectstatic
+```
+
+## Updating<a name="updating"></a>
+
+### Bare Metal<a name="bare-metal-1"></a>
+
+To update your existing installation of AA-GDPR, first enable your virtual environment
+(venv) of your Alliance Auth installation.
+
+```shell
+pip install aa-gdpr==0.7.1
+
+python manage.py collectstatic
+```
+
+Finally, restart your supervisor services for AA.
+
+### Docker<a name="docker-1"></a>
+
+To update your existing installation of AA-GDPR, first update your `conf/requirements.txt` file to the latest version of AA-GDPR.
+
+```text
+aa-gdpr==0.7.1
+```
+
+Now rebuild your containers:
+
+```shell
+docker compose build --no-cache
+docker compose --env-file=.env up -d
+```
+
+After that, run the following commands to collect the static files:
+
+```shell
+docker compose exec allianceauth_gunicorn bash
+auth collectstatic
 ```
 
 ## Migrating From Previous Versions (v0.7.x and below)<a name="migrating-from-previous-versions-v07x-and-below"></a>
@@ -84,6 +203,13 @@ the install section to be added to your `local.py` file.
 Once done and you've cleaned up your `local.py` file, you can add the new
 implementation as described in the
 "[Step 2: Configure](https://github.com/ppfeufer/aa-gdpr#step-2-configure)" section above.
+
+## Contributing<a name="contributing"></a>
+
+Do you want to contribute to this project? That's cool!
+
+Please make sure to read the [Contribution Guidelines](https://github.com/ppfeufer/aa-gdpr/blob/master/CONTRIBUTING.md).
+(I promise, it's not much, just some basics)
 
 ## Credits<a name="credits"></a>
 
