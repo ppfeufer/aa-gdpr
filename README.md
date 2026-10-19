@@ -15,17 +15,21 @@
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N8CL1BY)
 
-A Collection of overrides and resources to help Alliance Auth installs meet GDPR legislation.
-
-This Repository cannot guarantee your Legal requirements but aims to reduce the technical burden on Web/System Administrators
+A Collection of overrides and resources to help Alliance Auth installs meet GDPR
+legislation.
 
 ______________________________________________________________________
 
 <!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=2 -->
 
+- [Disclaimer](#disclaimer)
 - [Compatibility](#compatibility)
   - [Alliance Auth](#alliance-auth)
+    - [Replacements](#replacements)
+      - [Themes](#themes)
+      - [Libraries](#libraries)
   - [AA Bootswatch](#aa-bootswatch)
+    - [Replacements](#replacements-1)
 - [Installation](#installation)
   - [Bare Metal](#bare-metal)
     - [Step 1: Install the App](#step-1-install-the-app)
@@ -55,23 +59,81 @@ ______________________________________________________________________
 > I am waiting on a couple of PRs to be merged into Alliance Auth before I can
 > update this app to be compatible with current Alliance Auth.
 
+## Disclaimer<a name="disclaimer"></a>
+
+This Repository cannot guarantee your Legal requirements but aims to reduce the
+technical burden on Web/System Administrators.
+
+Not all 3rd party apps for Alliance Auth are using bundle templates to include their
+CSS and JS files. This app will not be able to override those files and you will have to
+contact the developers of those apps to make them compatible with AA-GDPR.
+(See Compatibility section for more information)
+
 ## Compatibility<a name="compatibility"></a>
 
 ### Alliance Auth<a name="alliance-auth"></a>
 
-This app is compatible
-with [Alliance Auth](https://gitlab.com/allianceauth/allianceauth) v5.0.0 and above.
+Compatible [Alliance Auth](https://gitlab.com/allianceauth/allianceauth) version: v5.0.0 and above.
 
-If you are using an older version of Alliance Auth, please update to the latest
-version before installing this app.
+#### Replacements<a name="replacements"></a>
+
+The following themes and libraries loaded from CDNs by Alliance Auth core will now be
+loaded from local static files:
+
+##### Themes<a name="themes"></a>
+
+- Bootstrap
+- Bootstrap Dark
+- Darkly
+- Flatly
+- Materia
+
+##### Libraries<a name="libraries"></a>
+
+- Bootstrap JS Bundle
+- Chart JS
+- Clipboard JS
+- DataTables Bootstrap 5 CSS
+- DataTables Bootstrap 5 JS
+- FontAwesome
+- jQuery Datetimepicker CSS
+- jQuery Datetimepicker JS
+- jQuery JS
+- jQuery Visibility JS
+- Moment JS
 
 ### AA Bootswatch<a name="aa-bootswatch"></a>
 
-This app is compatible
-with [AA Bootswatch](https://gitlab.com/tactical-supremacy/aa-bootswatch) v1.0.0 and above.
+Compatible [AA Bootswatch](https://gitlab.com/tactical-supremacy/aa-bootswatch) version: v1.0.0 and above.
 
-If you are using AA Bootswatch, please update to the latest version before
-installing this app.
+#### Replacements<a name="replacements-1"></a>
+
+The following theme CSS files loaded from CDNs by AA Bootswatch will now be loaded
+from local static files:
+
+- Brite
+- Cerulean
+- Cosmo
+- Cyborg
+- Journal
+- Litera
+- Lumen
+- Lux
+- Minty
+- Morph
+- Pulse
+- Quartz
+- Sandstone
+- Simplex
+- Sketchy
+- Slate
+- Solar
+- Spacelab
+- Superhero
+- United
+- Vapor
+- Yeti
+- Zephyr
 
 ## Installation<a name="installation"></a>
 
