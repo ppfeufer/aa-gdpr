@@ -61,8 +61,10 @@ ______________________________________________________________________
 
 ## Disclaimer<a name="disclaimer"></a>
 
-This Repository cannot guarantee your Legal requirements but aims to reduce the
-technical burden on Web/System Administrators.
+> [!IMPORTANT]
+>
+> This App cannot guarantee your legal requirements but aims to reduce the
+> technical burden on web/system administrators.
 
 Not all 3rd party apps for Alliance Auth are using bundle templates to include their
 CSS and JS files. This app will not be able to override those files and you will have to
