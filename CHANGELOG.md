@@ -48,6 +48,8 @@ Section Order:
 
 <!-- Your changes go here -->
 
+## [1.0.0] - 2026-10-29
+
 > [!IMPORTANT]
 >
 > This is a full rework of the app. If you have been running this app until now,
@@ -60,7 +62,7 @@ Section Order:
 
 ### Changed
 
-- Full rework of the AA-GDPR staticfiles to match AA v5 in its current state.
+- Full rework of the AA-GDPR staticfiles to match AA v5.6.0 and newer
 
 ## [0.7.1] - 2025-07-09
 
@@ -215,6 +217,7 @@ Section Order:
 [0.6.2]: https://github.com/ppfeufer/aa-gdpr/compare/v0.6.0...v0.6.2 "v0.6.2"
 [0.7.0]: https://github.com/ppfeufer/aa-gdpr/compare/v0.6.2...v0.7.0 "v0.7.0"
 [0.7.1]: https://github.com/ppfeufer/aa-gdpr/compare/v0.7.0...v0.7.1 "v0.7.1"
-[in development]: https://github.com/ppfeufer/aa-gdpr/compare/v0.7.1...HEAD "In Development"
+[1.0.0]: https://github.com/ppfeufer/aa-gdpr/compare/v0.7.1...v1.0.0 "v1.0.0"
+[in development]: https://github.com/ppfeufer/aa-gdpr/compare/v1.0.0...HEAD "In Development"
 [keep a changelog]: http://keepachangelog.com/ "Keep a Changelog"
 [semantic versioning]: http://semver.org/ "Semantic Versioning"
