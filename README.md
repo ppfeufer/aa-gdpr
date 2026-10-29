@@ -24,12 +24,10 @@ ______________________________________________________________________
 
 - [Disclaimer](#disclaimer)
 - [Compatibility](#compatibility)
-  - [Alliance Auth](#alliance-auth)
+  - [Alliance Auth >= v5.6.0](#alliance-auth--v560)
     - [Replacements](#replacements)
       - [Themes](#themes)
       - [Libraries](#libraries)
-  - [AA Bootswatch](#aa-bootswatch)
-    - [Replacements](#replacements-1)
 - [Installation](#installation)
   - [Bare Metal](#bare-metal)
     - [Step 1: Install the App](#step-1-install-the-app)
@@ -51,14 +49,6 @@ ______________________________________________________________________
 
 ______________________________________________________________________
 
-> [!WARNING]
->
-> Don't install this app just yet. The latest version is not compatible with
-> current Alliance Auth and will most likely break things!
->
-> I am waiting on a couple of PRs to be merged into Alliance Auth before I can
-> update this app to be compatible with current Alliance Auth.
-
 ## Disclaimer<a name="disclaimer"></a>
 
 > [!IMPORTANT]
@@ -73,9 +63,9 @@ contact the developers of those apps to make them compatible with AA-GDPR.
 
 ## Compatibility<a name="compatibility"></a>
 
-### Alliance Auth<a name="alliance-auth"></a>
+### Alliance Auth >= v5.6.0<a name="alliance-auth--v560"></a>
 
-Compatible [Alliance Auth](https://gitlab.com/allianceauth/allianceauth) version: v5.0.0 and above.
+Compatible [Alliance Auth](https://gitlab.com/allianceauth/allianceauth) version 5.6.0 and above.
 
 #### Replacements<a name="replacements"></a>
 
@@ -103,6 +93,12 @@ loaded from local static files:
 - jQuery JS
 - jQuery Visibility JS
 - Moment JS
+
+<!--
+Currently commented out because AA Bootswatch is not yet updated to be compatible
+with current AA-GDPR. Once it is, this section can be uncommented and the app will
+be compatible with AA Bootswatch as well.
+See: https://gitlab.com/tactical-supremacy/aa-bootswatch/-/merge_requests/3
 
 ### AA Bootswatch<a name="aa-bootswatch"></a>
 
@@ -136,6 +132,7 @@ from local static files:
 - Vapor
 - Yeti
 - Zephyr
+-->
 
 ## Installation<a name="installation"></a>
 
@@ -146,7 +143,7 @@ from local static files:
 Install the app with your venv active
 
 ```shell
-pip install aa-gdpr==0.7.1
+pip install aa-gdpr==1.0.0
 ```
 
 #### Step 2: Update Your AA Settings<a name="step-2-update-your-aa-settings"></a>
@@ -180,7 +177,7 @@ And restart your supervisor.
 Add the following line to your `conf/requirements.txt` file
 
 ```
-aa-gdpr==0.7.1
+aa-gdpr==1.0.0
 ```
 
 #### Step 2: Update Your AA Settings<a name="step-2-update-your-aa-settings-1"></a>
@@ -224,7 +221,7 @@ To update your existing installation of AA-GDPR, first enable your virtual envir
 (venv) of your Alliance Auth installation.
 
 ```shell
-pip install aa-gdpr==0.7.1
+pip install aa-gdpr==1.0.0
 
 python manage.py collectstatic
 ```
@@ -236,7 +233,7 @@ Finally, restart your supervisor services for AA.
 To update your existing installation of AA-GDPR, first update your `conf/requirements.txt` file to the latest version of AA-GDPR.
 
 ```text
-aa-gdpr==0.7.1
+aa-gdpr==1.0.0
 ```
 
 Now rebuild your containers:

@@ -2,6 +2,6 @@
 A Collection of GDPR Tools for Alliance Auth
 """
 
-__version__ = "0.7.1"
+__version__ = "1.0.0"
 __title__ = "AA GDPR"
 __url__ = "https://github.com/ppfeufer/aa-gdpr"
