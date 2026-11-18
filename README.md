@@ -134,6 +134,25 @@ from local static files:
 - Zephyr
 -->
 
+<!--
+Currently commented out because Alliance Auth Blacklist is not yet updated to be compatible
+with current AA-GDPR. Once it is, this section can be uncommented and the app will
+be compatible with Alliance Auth Blacklist as well.
+See: https://github.com/Solar-Helix-Independent-Transport/allianceauth-blacklist/pull/24
+
+### Alliance Auth Blacklist >= v1.0.0
+
+Compatible [Alliance Auth Blacklist](https://github.com/Solar-Helix-Independent-Transport/allianceauth-blacklist) version: v1.0.0 and above.
+
+#### Replacements
+
+The following libraries loaded from CDNs by Alliance Auth Blacklist will now be
+loaded from local static files:
+
+- Datatables Responsive Bootstrap 5 CSS
+- Datatables Responsive Bootstrap 5 JS
+-->
+
 ## Installation<a name="installation"></a>
 
 ### Bare Metal<a name="bare-metal"></a>
